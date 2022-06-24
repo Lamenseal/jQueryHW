@@ -67,12 +67,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HW1.html" />
     <Content Include="HW2.html" />
     <Content Include="images\JavaScript.js" />
+    <Content Include="images\slide0.JPG" />
     <Content Include="images\slide1.jpg" />
     <Content Include="images\slide2.jpg" />
     <Content Include="images\slide3.jpg" />
     <Content Include="images\slide4.jpg" />
+    <Content Include="images\slide5.JPG" />
     <Content Include="js\jquery-3.6.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>

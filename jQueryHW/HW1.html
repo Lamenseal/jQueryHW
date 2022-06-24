@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        img{height:200px;
+            width:200px}
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <img id="idimg1" src="images/slide0.jpg" />
+        <img id="idimg2" src="images/slide0.jpg" />
+        <img id="idimg3" src="images/slide0.jpg" />
+        <img id="idimg4" src="images/slide0.jpg" /> 
+        <img id="idimg5" src="images/slide0.jpg" />
+    </div>
+    <div>
+        <p id="p1">請給予星數評分</p>
+    </div>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script>
+            let counts = ["idimg1", "idimg2", "idimg3", "idimg4", "idimg5"];
+            let decide = true;
+            let thiscount = 0;
+            $("img").mouseenter(function () {
+                if (decide == true) {
+                    let j = counts.indexOf(this.id);
+                    for (let i = j; i >= 0; i--) {
+                        $("img").eq(i).attr("src","images/slide" + i + ".jpg");
+                    }
+                    $("#p1").text("給予" + (j + 1) + "分");
+                }
+            });
+            $("img").click(function() {
+                let j = counts.indexOf(this.id);
+                for (let i = j; i >= 0; i--) {
+                    $("img").attr("src", "images/slide" + j + ".jpg");
+                }
+                $("#p1").text = "給予" + (j + 1) + "分";
+                decide = false;
+            });
+            $("img").dblclick(function() {
+                decide = true;
+            });
+            $("img").mouseout(function () {
+                if (decide == true) {
+                    let j = counts.indexOf(this.id);
+                    for (let i = j; i >= 0; i--) {
+                        $("img").eq(i).attr("src", "images/slide0.jpg");
+                    }
+                    
+                }
+                $("#p1").text = "請給予分數";
+            });
+        </script>
+
+</body>
+</html>
